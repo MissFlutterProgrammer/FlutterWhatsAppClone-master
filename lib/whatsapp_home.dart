@@ -7,7 +7,7 @@ import 'package:flutterwhatsapp/pages/status_screen.dart';
 
 class WhatsAppHome extends StatefulWidget {
   final List<CameraDescription> cameras;
-  WhatsAppHome({this.cameras});
+  WhatsAppHome({required this.cameras});
 
   @override
   _WhatsAppHomeState createState() => _WhatsAppHomeState();
@@ -15,7 +15,7 @@ class WhatsAppHome extends StatefulWidget {
 
 class _WhatsAppHomeState extends State<WhatsAppHome>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
   bool showFab = true;
 
   @override
@@ -45,20 +45,14 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           tabs: <Widget>[
             Tab(icon: Icon(Icons.camera_alt)),
             Tab(text: "CHATS"),
-            Tab(
-              text: "STATUS",
-            ),
-            Tab(
-              text: "CALLS",
-            ),
+            Tab(text: "STATUS"),
+            Tab(text: "CALLS"),
           ],
         ),
         actions: <Widget>[
           Icon(Icons.search),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-          ),
-          Icon(Icons.more_vert)
+          Padding(padding: const EdgeInsets.symmetric(horizontal: 5)),
+          Icon(Icons.more_vert),
         ],
       ),
       body: TabBarView(
@@ -70,16 +64,14 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           CallsScreen(),
         ],
       ),
-      floatingActionButton: showFab
-          ? FloatingActionButton(
-              backgroundColor: Theme.of(context).accentColor,
-              child: Icon(
-                Icons.message,
-                color: Colors.white,
-              ),
-              onPressed: () => print("open chats"),
-            )
-          : null,
+      floatingActionButton:
+          showFab
+              ? FloatingActionButton(
+                backgroundColor: Theme.of(context).colorScheme.secondary,
+                child: Icon(Icons.message, color: Colors.white),
+                onPressed: () => print("open chats"),
+              )
+              : null,
     );
   }
 }

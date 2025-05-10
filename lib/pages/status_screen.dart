@@ -11,34 +11,31 @@ class StatusScreen extends StatelessWidget {
         children: <Widget>[
           Card(
             color: Colors.white,
-            elevation: 0.0,
+            elevation: 0,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: ListTile(
                 leading: Stack(
                   children: <Widget>[
                     CircleAvatar(
                       radius: 30,
                       backgroundImage: NetworkImage(
-                          "https://s3.amazonaws.com/wll-community-production/images/no-avatar.png"),
+                        "https://s3.amazonaws.com/wll-community-production/images/no-avatar.png",
+                      ),
                     ),
                     Positioned(
-                      bottom: 0.0,
-                      right: 1.0,
+                      bottom: 0,
+                      right: 1,
                       child: Container(
                         height: 20,
                         width: 20,
-                        child: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                          size: 15,
-                        ),
+                        child: Icon(Icons.add, color: Colors.white, size: 15),
                         decoration: BoxDecoration(
                           color: Colors.green,
                           shape: BoxShape.circle,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 title: Text(
@@ -50,7 +47,7 @@ class StatusScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: Text(
               "Viewed updates",
               style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
@@ -58,7 +55,7 @@ class StatusScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               color: Colors.white,
               child: ListView(
                 children: <Widget>[
@@ -66,17 +63,21 @@ class StatusScreen extends StatelessWidget {
                     leading: CircleAvatar(
                       radius: 30,
                       backgroundImage: NetworkImage(
-                          "https://pbs.twimg.com/media/EClDvMXU4AAw_lt?format=jpg&name=medium"),
+                        "https://pbs.twimg.com/media/EClDvMXU4AAw_lt?format=jpg&name=medium",
+                      ),
                     ),
                     title: Text(
                       "Pawan Kumar",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text("Today, 20:16 PM"),
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => StoryPageView())),
+                    onTap:
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StoryPageView(),
+                          ),
+                        ),
                   ),
                 ],
               ),
