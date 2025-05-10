@@ -27,11 +27,16 @@ class ChatScreenState extends State<ChatScreen> {
               children: <Widget>[
                 Text(
                   dummyData[i].name,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   dummyData[i].time,
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 14,
+                  ),
                 ),
               ],
             ),
@@ -39,7 +44,10 @@ class ChatScreenState extends State<ChatScreen> {
               padding: const EdgeInsets.only(top: 5),
               child: Text(
                 dummyData[i].message,
-                style: TextStyle(color: Colors.grey, fontSize: 15),
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15,
+                ),
               ),
             ),
           ),

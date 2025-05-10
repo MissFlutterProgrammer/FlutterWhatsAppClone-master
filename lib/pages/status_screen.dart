@@ -40,9 +40,7 @@ class StatusScreen extends StatelessWidget {
                 ),
                 title: Text(
                   "My Status",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text("Tap to add status update"),
               ),
@@ -52,10 +50,7 @@ class StatusScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: Text(
               "Viewed updates",
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
@@ -76,12 +71,13 @@ class StatusScreen extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text("Today, 20:16 PM"),
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => StoryPageView(),
-                      ),
-                    ),
+                    onTap:
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StoryPageView(),
+                          ),
+                        ),
                   ),
                 ],
               ),
