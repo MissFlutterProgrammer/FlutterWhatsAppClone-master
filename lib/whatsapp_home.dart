@@ -64,14 +64,13 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           CallsScreen(),
         ],
       ),
-      floatingActionButton:
-          showFab
-              ? FloatingActionButton(
-                backgroundColor: Theme.of(context).colorScheme.secondary,
-                child: Icon(Icons.message, color: Colors.white),
-                onPressed: () => print("open chats"),
-              )
-              : null,
+      floatingActionButton: showFab
+          ? FloatingActionButton(
+              backgroundColor: Theme.of(context).colorScheme.secondary,
+              child: Icon(Icons.message, color: Colors.white),
+              onPressed: () => print("open chats"),
+            )
+          : null,
     );
   }
 }
